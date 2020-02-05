@@ -1,0 +1,21 @@
+--nota: crear una base de datos manualmente con el nombre de-> dbSibarita
+create table Usuarios(
+IdUsuario int IDENTITY(1,1) primary key,
+Ci varchar(20) not null,
+Nombre varchar(50) not null,
+Apellido varchar(50) not null,
+Cuenta varchar(30) not null,
+Pass varchar(30) not null,
+TipoUsuario varchar(30) not null
+);
+
+create table Archivo(
+id int IDENTITY(1,1) primary key,
+nombre varchar(50) not null,
+realName varchar(50) not null,
+doc varbinary(MAX)
+);
+
+
+
+INSERT INTO Usuarios VALUES (353535,'Luis','Choque','Admin','Admin','Administrador')
