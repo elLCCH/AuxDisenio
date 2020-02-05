@@ -30,55 +30,72 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label nombreLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArchivos));
             System.Windows.Forms.Label idLabel;
+            System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label label3;
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnGestionarUser = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.archivoTextBox = new System.Windows.Forms.TextBox();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnSeleccionar = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.archivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.archivoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.archivoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.idLabel1 = new System.Windows.Forms.Label();
             this.archivoDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.archivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idLabel1 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             nombreLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.archivoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.archivoBindingNavigator)).BeginInit();
-            this.archivoBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.archivoDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.archivoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(17, 109);
+            nombreLabel.Location = new System.Drawing.Point(19, 97);
             nombreLabel.Name = "nombreLabel";
             nombreLabel.Size = new System.Drawing.Size(45, 13);
             nombreLabel.TabIndex = 10;
             nombreLabel.Text = "nombre:";
+            // 
+            // idLabel
+            // 
+            idLabel.AutoSize = true;
+            idLabel.Location = new System.Drawing.Point(28, 71);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new System.Drawing.Size(18, 13);
+            idLabel.TabIndex = 16;
+            idLabel.Text = "id:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(67, 129);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(43, 13);
+            label2.TabIndex = 22;
+            label2.Text = "Buscar:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(257, 97);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(21, 13);
+            label3.TabIndex = 23;
+            label3.Text = "url:";
             // 
             // splitContainer1
             // 
@@ -91,8 +108,10 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.AutoScroll = true;
-            this.splitContainer1.Panel1.Controls.Add(idLabel);
-            this.splitContainer1.Panel1.Controls.Add(this.idLabel1);
+            this.splitContainer1.Panel1.Controls.Add(this.btnGestionarUser);
+            this.splitContainer1.Panel1.Controls.Add(label3);
+            this.splitContainer1.Panel1.Controls.Add(label2);
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.txtBusqueda);
             this.splitContainer1.Panel1.Controls.Add(this.archivoTextBox);
             this.splitContainer1.Panel1.Controls.Add(nombreLabel);
@@ -105,13 +124,37 @@
             // 
             this.splitContainer1.Panel2.AutoScroll = true;
             this.splitContainer1.Panel2.Controls.Add(this.archivoDataGridView);
+            this.splitContainer1.Panel2.Controls.Add(this.idLabel1);
+            this.splitContainer1.Panel2.Controls.Add(idLabel);
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 172;
             this.splitContainer1.TabIndex = 0;
             // 
+            // btnGestionarUser
+            // 
+            this.btnGestionarUser.Location = new System.Drawing.Point(643, 30);
+            this.btnGestionarUser.Name = "btnGestionarUser";
+            this.btnGestionarUser.Size = new System.Drawing.Size(120, 23);
+            this.btnGestionarUser.TabIndex = 24;
+            this.btnGestionarUser.Text = "Gestionar Usuarios";
+            this.btnGestionarUser.UseVisualStyleBackColor = true;
+            this.btnGestionarUser.Visible = false;
+            this.btnGestionarUser.Click += new System.EventHandler(this.BtnGestionarUser_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(210, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(359, 31);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "GESTION DOCUMENTOS";
+            // 
             // txtBusqueda
             // 
-            this.txtBusqueda.Location = new System.Drawing.Point(137, 134);
+            this.txtBusqueda.Location = new System.Drawing.Point(113, 127);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(340, 20);
             this.txtBusqueda.TabIndex = 16;
@@ -119,21 +162,21 @@
             // 
             // archivoTextBox
             // 
-            this.archivoTextBox.Location = new System.Drawing.Point(272, 106);
+            this.archivoTextBox.Location = new System.Drawing.Point(284, 94);
             this.archivoTextBox.Name = "archivoTextBox";
             this.archivoTextBox.Size = new System.Drawing.Size(449, 20);
             this.archivoTextBox.TabIndex = 14;
             // 
             // nombreTextBox
             // 
-            this.nombreTextBox.Location = new System.Drawing.Point(81, 106);
+            this.nombreTextBox.Location = new System.Drawing.Point(83, 94);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(147, 20);
             this.nombreTextBox.TabIndex = 11;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(629, 132);
+            this.button3.Location = new System.Drawing.Point(631, 125);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(122, 23);
             this.button3.TabIndex = 8;
@@ -143,7 +186,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(512, 132);
+            this.button2.Location = new System.Drawing.Point(502, 125);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(111, 23);
             this.button2.TabIndex = 7;
@@ -153,159 +196,13 @@
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(723, 105);
+            this.btnSeleccionar.Location = new System.Drawing.Point(735, 93);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(28, 21);
             this.btnSeleccionar.TabIndex = 6;
             this.btnSeleccionar.Text = "...";
             this.btnSeleccionar.UseVisualStyleBackColor = true;
             this.btnSeleccionar.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // archivoBindingSource
-            // 
-            this.archivoBindingSource.DataSource = typeof(AuxDisenio.Data.Archivo);
-            // 
-            // archivoBindingNavigator
-            // 
-            this.archivoBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.archivoBindingNavigator.BindingSource = this.archivoBindingSource;
-            this.archivoBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.archivoBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.archivoBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.archivoBindingNavigatorSaveItem});
-            this.archivoBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.archivoBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.archivoBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.archivoBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.archivoBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.archivoBindingNavigator.Name = "archivoBindingNavigator";
-            this.archivoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.archivoBindingNavigator.Size = new System.Drawing.Size(800, 25);
-            this.archivoBindingNavigator.TabIndex = 1;
-            this.archivoBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Posición";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Mover último";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Eliminar";
-            // 
-            // archivoBindingNavigatorSaveItem
-            // 
-            this.archivoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.archivoBindingNavigatorSaveItem.Enabled = false;
-            this.archivoBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("archivoBindingNavigatorSaveItem.Image")));
-            this.archivoBindingNavigatorSaveItem.Name = "archivoBindingNavigatorSaveItem";
-            this.archivoBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.archivoBindingNavigatorSaveItem.Text = "Guardar datos";
-            // 
-            // idLabel
-            // 
-            idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(20, 80);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(18, 13);
-            idLabel.TabIndex = 16;
-            idLabel.Text = "id:";
-            // 
-            // idLabel1
-            // 
-            this.idLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.archivoBindingSource, "id", true));
-            this.idLabel1.Location = new System.Drawing.Point(44, 80);
-            this.idLabel1.Name = "idLabel1";
-            this.idLabel1.Size = new System.Drawing.Size(100, 23);
-            this.idLabel1.TabIndex = 17;
-            this.idLabel1.Text = "label1";
             // 
             // archivoDataGridView
             // 
@@ -348,28 +245,37 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
-            // Form1
+            // archivoBindingSource
+            // 
+            this.archivoBindingSource.DataSource = typeof(AuxDisenio.Data.Archivo);
+            // 
+            // idLabel1
+            // 
+            this.idLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.archivoBindingSource, "id", true));
+            this.idLabel1.Location = new System.Drawing.Point(52, 71);
+            this.idLabel1.Name = "idLabel1";
+            this.idLabel1.Size = new System.Drawing.Size(100, 23);
+            this.idLabel1.TabIndex = 17;
+            this.idLabel1.Text = "label1";
+            // 
+            // frmArchivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.archivoBindingNavigator);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "Form1";
+            this.Name = "frmArchivos";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.archivoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.archivoBindingNavigator)).EndInit();
-            this.archivoBindingNavigator.ResumeLayout(false);
-            this.archivoBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.archivoDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.archivoBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -394,19 +300,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.BindingNavigator archivoBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton archivoBindingNavigatorSaveItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnGestionarUser;
     }
 }
 

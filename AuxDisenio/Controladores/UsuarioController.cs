@@ -37,5 +37,26 @@ namespace AuxDisenio.Controladores
         {
             return _db.Usuarios.Where(x => x.Cuenta == pCuenta).ToList();
         }
+        public bool Autenticar(string pUser, string pPass) //metodo autenticar con parametro usuario y contraseña respectivamente
+        {
+            try
+            {
+                //en una var "res" donde usamos de la base de datos usando la tabla usuario donde x sea usado para uso de datos en tabla BD
+                var res = _db.Usuarios.Where(x => x.Cuenta == pUser && x.Pass == pPass).SingleOrDefault(); //singleOrdefault mandará excepcion si existe mas de un usuario con lo mismos datos
+                if (res != null) //si res es diferente de vacio
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public string obtenerTipo(string pUser, string pPass)
+        {
+            var res = _db.Usuarios.Where(x => x.Cuenta == pUser && x.Pass == pPass).SingleOrDefault();
+            return res.TipoUsuario;
+        }
     }
 }

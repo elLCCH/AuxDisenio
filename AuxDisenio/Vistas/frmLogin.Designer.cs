@@ -36,12 +36,8 @@
             this.txtpass = new System.Windows.Forms.TextBox();
             this.txtuser = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnminimizar = new System.Windows.Forms.PictureBox();
-            this.btncerrar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogAceptar
@@ -61,6 +57,7 @@
             this.btnLogAceptar.TabIndex = 21;
             this.btnLogAceptar.Text = "Aceptar";
             this.btnLogAceptar.UseVisualStyleBackColor = false;
+            this.btnLogAceptar.Click += new System.EventHandler(this.BtnLogAceptar_Click);
             // 
             // btnLogCancelar
             // 
@@ -79,6 +76,7 @@
             this.btnLogCancelar.TabIndex = 20;
             this.btnLogCancelar.Text = "Cancelar";
             this.btnLogCancelar.UseVisualStyleBackColor = false;
+            this.btnLogCancelar.Click += new System.EventHandler(this.btnLogCancelar_Click);
             // 
             // pictureBox1
             // 
@@ -133,36 +131,12 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "LOGIN";
             // 
-            // btnminimizar
-            // 
-            this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnminimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnminimizar.Image")));
-            this.btnminimizar.Location = new System.Drawing.Point(330, 12);
-            this.btnminimizar.Name = "btnminimizar";
-            this.btnminimizar.Size = new System.Drawing.Size(15, 15);
-            this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnminimizar.TabIndex = 25;
-            this.btnminimizar.TabStop = false;
-            // 
-            // btncerrar
-            // 
-            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncerrar.Image = ((System.Drawing.Image)(resources.GetObject("btncerrar.Image")));
-            this.btncerrar.Location = new System.Drawing.Point(351, 12);
-            this.btncerrar.Name = "btncerrar";
-            this.btncerrar.Size = new System.Drawing.Size(15, 15);
-            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btncerrar.TabIndex = 24;
-            this.btncerrar.TabStop = false;
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(69)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(378, 263);
-            this.Controls.Add(this.btnminimizar);
-            this.Controls.Add(this.btncerrar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnLogAceptar);
             this.Controls.Add(this.btnLogCancelar);
@@ -175,8 +149,6 @@
             this.Text = "frmLogin";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,7 +163,5 @@
         private System.Windows.Forms.TextBox txtpass;
         private System.Windows.Forms.TextBox txtuser;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox btnminimizar;
-        private System.Windows.Forms.PictureBox btncerrar;
     }
 }

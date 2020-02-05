@@ -1,4 +1,5 @@
 ﻿using AuxDisenio.Controladores;
+using AuxDisenio.Vistas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,12 +17,18 @@ namespace AuxDisenio
     public partial class frmArchivos : Form
     {
         ArchivosController _aC = new ArchivosController();
-        public frmArchivos()
+        UsuariosController _uC = new UsuariosController();
+        string _tipo;
+        public frmArchivos(string text)
         {
             InitializeComponent();
         }
+        public frmArchivos(string pCuenta, string pPass)
+        {
+            InitializeComponent();
+            _tipo = _uC.obtenerTipo(pCuenta,pPass);
+        }
 
-        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -34,7 +41,15 @@ namespace AuxDisenio
 
             // Refresh();
             Listar(txtBusqueda.Text);
-
+            MessageBox.Show(_tipo);
+            if(_tipo=="Administrador")
+            {
+                btnGestionarUser.Visible = true;
+            }
+            else
+            {
+                btnGestionarUser.Visible = false;
+            }
         }
 
         private void Listar(string pBuscar)
@@ -124,6 +139,14 @@ namespace AuxDisenio
             {
                 Listar(txtBusqueda.Text);
             }
+        }
+
+        private void BtnGestionarUser_Click(object sender, EventArgs e)
+        {
+            GestionarUsers frm = new GestionarUsers();
+            
+            frm.ShowDialog();
+            
         }
     }
 }

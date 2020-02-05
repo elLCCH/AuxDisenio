@@ -17,7 +17,7 @@ namespace AuxDisenio
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Vistas.GestionarUsers());
-            Application.Run(new frmArchivos());
+            Application.Run(new Vistas.frmLogin());
         }
     }
 }

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuario));
             System.Windows.Forms.Label apellidoLabel;
             System.Windows.Forms.Label ciLabel;
             System.Windows.Forms.Label cuentaLabel;
             System.Windows.Forms.Label nombreLabel;
             System.Windows.Forms.Label passLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuario));
             System.Windows.Forms.Label tipoUsuarioLabel;
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -46,7 +46,7 @@
             this.cuentaTextBox = new System.Windows.Forms.TextBox();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.passTextBox = new System.Windows.Forms.TextBox();
-            this.tipoUsuarioTextBox = new System.Windows.Forms.TextBox();
+            this.tipoUsuarioComboBox = new System.Windows.Forms.ComboBox();
             apellidoLabel = new System.Windows.Forms.Label();
             ciLabel = new System.Windows.Forms.Label();
             cuentaLabel = new System.Windows.Forms.Label();
@@ -56,6 +56,51 @@
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // apellidoLabel
+            // 
+            apellidoLabel.AutoSize = true;
+            apellidoLabel.Location = new System.Drawing.Point(92, 52);
+            apellidoLabel.Name = "apellidoLabel";
+            apellidoLabel.Size = new System.Drawing.Size(47, 13);
+            apellidoLabel.TabIndex = 20;
+            apellidoLabel.Text = "Apellido:";
+            // 
+            // ciLabel
+            // 
+            ciLabel.AutoSize = true;
+            ciLabel.Location = new System.Drawing.Point(92, 78);
+            ciLabel.Name = "ciLabel";
+            ciLabel.Size = new System.Drawing.Size(19, 13);
+            ciLabel.TabIndex = 22;
+            ciLabel.Text = "Ci:";
+            // 
+            // cuentaLabel
+            // 
+            cuentaLabel.AutoSize = true;
+            cuentaLabel.Location = new System.Drawing.Point(92, 104);
+            cuentaLabel.Name = "cuentaLabel";
+            cuentaLabel.Size = new System.Drawing.Size(44, 13);
+            cuentaLabel.TabIndex = 24;
+            cuentaLabel.Text = "Cuenta:";
+            // 
+            // nombreLabel
+            // 
+            nombreLabel.AutoSize = true;
+            nombreLabel.Location = new System.Drawing.Point(92, 130);
+            nombreLabel.Name = "nombreLabel";
+            nombreLabel.Size = new System.Drawing.Size(47, 13);
+            nombreLabel.TabIndex = 26;
+            nombreLabel.Text = "Nombre:";
+            // 
+            // passLabel
+            // 
+            passLabel.AutoSize = true;
+            passLabel.Location = new System.Drawing.Point(92, 156);
+            passLabel.Name = "passLabel";
+            passLabel.Size = new System.Drawing.Size(33, 13);
+            passLabel.TabIndex = 28;
+            passLabel.Text = "Pass:";
             // 
             // btnAceptar
             // 
@@ -110,87 +155,42 @@
             // 
             this.usuariosBindingSource1.DataSource = typeof(AuxDisenio.Data.Usuarios);
             // 
-            // apellidoLabel
-            // 
-            apellidoLabel.AutoSize = true;
-            apellidoLabel.Location = new System.Drawing.Point(447, 121);
-            apellidoLabel.Name = "apellidoLabel";
-            apellidoLabel.Size = new System.Drawing.Size(47, 13);
-            apellidoLabel.TabIndex = 20;
-            apellidoLabel.Text = "Apellido:";
-            // 
             // apellidoTextBox
             // 
             this.apellidoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource1, "Apellido", true));
-            this.apellidoTextBox.Location = new System.Drawing.Point(523, 118);
+            this.apellidoTextBox.Location = new System.Drawing.Point(168, 49);
             this.apellidoTextBox.Name = "apellidoTextBox";
             this.apellidoTextBox.Size = new System.Drawing.Size(100, 20);
             this.apellidoTextBox.TabIndex = 21;
             // 
-            // ciLabel
-            // 
-            ciLabel.AutoSize = true;
-            ciLabel.Location = new System.Drawing.Point(447, 147);
-            ciLabel.Name = "ciLabel";
-            ciLabel.Size = new System.Drawing.Size(19, 13);
-            ciLabel.TabIndex = 22;
-            ciLabel.Text = "Ci:";
-            // 
             // ciTextBox
             // 
             this.ciTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource1, "Ci", true));
-            this.ciTextBox.Location = new System.Drawing.Point(523, 144);
+            this.ciTextBox.Location = new System.Drawing.Point(168, 75);
             this.ciTextBox.Name = "ciTextBox";
             this.ciTextBox.Size = new System.Drawing.Size(100, 20);
             this.ciTextBox.TabIndex = 23;
             // 
-            // cuentaLabel
-            // 
-            cuentaLabel.AutoSize = true;
-            cuentaLabel.Location = new System.Drawing.Point(447, 173);
-            cuentaLabel.Name = "cuentaLabel";
-            cuentaLabel.Size = new System.Drawing.Size(44, 13);
-            cuentaLabel.TabIndex = 24;
-            cuentaLabel.Text = "Cuenta:";
-            // 
             // cuentaTextBox
             // 
             this.cuentaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource1, "Cuenta", true));
-            this.cuentaTextBox.Location = new System.Drawing.Point(523, 170);
+            this.cuentaTextBox.Location = new System.Drawing.Point(168, 101);
             this.cuentaTextBox.Name = "cuentaTextBox";
             this.cuentaTextBox.Size = new System.Drawing.Size(100, 20);
             this.cuentaTextBox.TabIndex = 25;
             // 
-            // nombreLabel
-            // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(447, 199);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(47, 13);
-            nombreLabel.TabIndex = 26;
-            nombreLabel.Text = "Nombre:";
-            // 
             // nombreTextBox
             // 
             this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource1, "Nombre", true));
-            this.nombreTextBox.Location = new System.Drawing.Point(523, 196);
+            this.nombreTextBox.Location = new System.Drawing.Point(168, 127);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(100, 20);
             this.nombreTextBox.TabIndex = 27;
             // 
-            // passLabel
-            // 
-            passLabel.AutoSize = true;
-            passLabel.Location = new System.Drawing.Point(447, 225);
-            passLabel.Name = "passLabel";
-            passLabel.Size = new System.Drawing.Size(33, 13);
-            passLabel.TabIndex = 28;
-            passLabel.Text = "Pass:";
-            // 
             // passTextBox
             // 
             this.passTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource1, "Pass", true));
-            this.passTextBox.Location = new System.Drawing.Point(523, 222);
+            this.passTextBox.Location = new System.Drawing.Point(168, 153);
             this.passTextBox.Name = "passTextBox";
             this.passTextBox.Size = new System.Drawing.Size(100, 20);
             this.passTextBox.TabIndex = 29;
@@ -198,26 +198,32 @@
             // tipoUsuarioLabel
             // 
             tipoUsuarioLabel.AutoSize = true;
-            tipoUsuarioLabel.Location = new System.Drawing.Point(447, 251);
+            tipoUsuarioLabel.Location = new System.Drawing.Point(92, 186);
             tipoUsuarioLabel.Name = "tipoUsuarioLabel";
             tipoUsuarioLabel.Size = new System.Drawing.Size(70, 13);
-            tipoUsuarioLabel.TabIndex = 30;
+            tipoUsuarioLabel.TabIndex = 29;
             tipoUsuarioLabel.Text = "Tipo Usuario:";
             // 
-            // tipoUsuarioTextBox
+            // tipoUsuarioComboBox
             // 
-            this.tipoUsuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource1, "TipoUsuario", true));
-            this.tipoUsuarioTextBox.Location = new System.Drawing.Point(523, 248);
-            this.tipoUsuarioTextBox.Name = "tipoUsuarioTextBox";
-            this.tipoUsuarioTextBox.Size = new System.Drawing.Size(100, 20);
-            this.tipoUsuarioTextBox.TabIndex = 31;
+            this.tipoUsuarioComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource1, "TipoUsuario", true));
+            this.tipoUsuarioComboBox.FormattingEnabled = true;
+            this.tipoUsuarioComboBox.Items.AddRange(new object[] {
+            "Administrador",
+            "Usuario"});
+            this.tipoUsuarioComboBox.Location = new System.Drawing.Point(168, 183);
+            this.tipoUsuarioComboBox.Name = "tipoUsuarioComboBox";
+            this.tipoUsuarioComboBox.Size = new System.Drawing.Size(121, 21);
+            this.tipoUsuarioComboBox.TabIndex = 30;
             // 
             // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(659, 533);
+            this.ClientSize = new System.Drawing.Size(357, 288);
+            this.Controls.Add(tipoUsuarioLabel);
+            this.Controls.Add(this.tipoUsuarioComboBox);
             this.Controls.Add(apellidoLabel);
             this.Controls.Add(this.apellidoTextBox);
             this.Controls.Add(ciLabel);
@@ -228,8 +234,6 @@
             this.Controls.Add(this.nombreTextBox);
             this.Controls.Add(passLabel);
             this.Controls.Add(this.passTextBox);
-            this.Controls.Add(tipoUsuarioLabel);
-            this.Controls.Add(this.tipoUsuarioTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
@@ -254,6 +258,6 @@
         private System.Windows.Forms.TextBox cuentaTextBox;
         private System.Windows.Forms.TextBox nombreTextBox;
         private System.Windows.Forms.TextBox passTextBox;
-        private System.Windows.Forms.TextBox tipoUsuarioTextBox;
+        private System.Windows.Forms.ComboBox tipoUsuarioComboBox;
     }
 }
