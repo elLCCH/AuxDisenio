@@ -12,11 +12,14 @@ namespace AuxDisenio.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Archivo
+    public partial class Usuarios
     {
-        public int id { get; set; }
-        public string nombre { get; set; }
-        public string realName { get; set; }
-        public byte[] doc { get; set; }
+        public int IdUsuario { get; set; }
+        public string Ci { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Cuenta { get; set; }
+        public string Pass { get; set; }
+        public string TipoUsuario { get; set; }
     }
 }

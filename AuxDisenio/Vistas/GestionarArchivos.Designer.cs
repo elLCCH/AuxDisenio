@@ -1,6 +1,6 @@
 ﻿namespace AuxDisenio
 {
-    partial class Form1
+    partial class frmArchivos
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label nombreLabel;
-            System.Windows.Forms.Label archivoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArchivos));
+            System.Windows.Forms.Label idLabel;
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dgv = new System.Windows.Forms.DataGridView();
-            this.textoDataSet = new AuxDisenio.textoDataSet();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.archivoTextBox = new System.Windows.Forms.TextBox();
+            this.nombreTextBox = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnSeleccionar = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.archivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.archivoTableAdapter = new AuxDisenio.textoDataSetTableAdapters.ArchivoTableAdapter();
-            this.tableAdapterManager = new AuxDisenio.textoDataSetTableAdapters.TableAdapterManager();
             this.archivoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -52,25 +54,31 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.archivoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.idTextBox = new System.Windows.Forms.TextBox();
-            this.nombreTextBox = new System.Windows.Forms.TextBox();
-            this.archivoTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            idLabel = new System.Windows.Forms.Label();
+            this.idLabel1 = new System.Windows.Forms.Label();
+            this.archivoDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             nombreLabel = new System.Windows.Forms.Label();
-            archivoLabel = new System.Windows.Forms.Label();
+            idLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.archivoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.archivoBindingNavigator)).BeginInit();
             this.archivoBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.archivoDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // nombreLabel
+            // 
+            nombreLabel.AutoSize = true;
+            nombreLabel.Location = new System.Drawing.Point(17, 109);
+            nombreLabel.Name = "nombreLabel";
+            nombreLabel.Size = new System.Drawing.Size(45, 13);
+            nombreLabel.TabIndex = 10;
+            nombreLabel.Text = "nombre:";
             // 
             // splitContainer1
             // 
@@ -82,50 +90,80 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button2);
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
-            this.splitContainer1.Panel1.Controls.Add(archivoLabel);
+            this.splitContainer1.Panel1.AutoScroll = true;
+            this.splitContainer1.Panel1.Controls.Add(idLabel);
+            this.splitContainer1.Panel1.Controls.Add(this.idLabel1);
+            this.splitContainer1.Panel1.Controls.Add(this.txtBusqueda);
             this.splitContainer1.Panel1.Controls.Add(this.archivoTextBox);
             this.splitContainer1.Panel1.Controls.Add(nombreLabel);
             this.splitContainer1.Panel1.Controls.Add(this.nombreTextBox);
-            this.splitContainer1.Panel1.Controls.Add(idLabel);
-            this.splitContainer1.Panel1.Controls.Add(this.idTextBox);
+            this.splitContainer1.Panel1.Controls.Add(this.button3);
+            this.splitContainer1.Panel1.Controls.Add(this.button2);
+            this.splitContainer1.Panel1.Controls.Add(this.btnSeleccionar);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgv);
+            this.splitContainer1.Panel2.AutoScroll = true;
+            this.splitContainer1.Panel2.Controls.Add(this.archivoDataGridView);
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 172;
             this.splitContainer1.TabIndex = 0;
             // 
-            // dgv
+            // txtBusqueda
             // 
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv.Location = new System.Drawing.Point(0, 0);
-            this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(800, 274);
-            this.dgv.TabIndex = 0;
+            this.txtBusqueda.Location = new System.Drawing.Point(137, 134);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(340, 20);
+            this.txtBusqueda.TabIndex = 16;
+            this.txtBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBusqueda_KeyUp);
             // 
-            // textoDataSet
+            // archivoTextBox
             // 
-            this.textoDataSet.DataSetName = "textoDataSet";
-            this.textoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.archivoTextBox.Location = new System.Drawing.Point(272, 106);
+            this.archivoTextBox.Name = "archivoTextBox";
+            this.archivoTextBox.Size = new System.Drawing.Size(449, 20);
+            this.archivoTextBox.TabIndex = 14;
+            // 
+            // nombreTextBox
+            // 
+            this.nombreTextBox.Location = new System.Drawing.Point(81, 106);
+            this.nombreTextBox.Name = "nombreTextBox";
+            this.nombreTextBox.Size = new System.Drawing.Size(147, 20);
+            this.nombreTextBox.TabIndex = 11;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(629, 132);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(122, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Abrir Documento";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(512, 132);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(111, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Subir Archivo";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.Location = new System.Drawing.Point(723, 105);
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.Size = new System.Drawing.Size(28, 21);
+            this.btnSeleccionar.TabIndex = 6;
+            this.btnSeleccionar.Text = "...";
+            this.btnSeleccionar.UseVisualStyleBackColor = true;
+            this.btnSeleccionar.Click += new System.EventHandler(this.Button1_Click);
             // 
             // archivoBindingSource
             // 
-            this.archivoBindingSource.DataMember = "Archivo";
-            this.archivoBindingSource.DataSource = this.textoDataSet;
-            // 
-            // archivoTableAdapter
-            // 
-            this.archivoTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.ArchivoTableAdapter = this.archivoTableAdapter;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.UpdateOrder = AuxDisenio.textoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.archivoBindingSource.DataSource = typeof(AuxDisenio.Data.Archivo);
             // 
             // archivoBindingNavigator
             // 
@@ -192,14 +230,14 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 15);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -207,7 +245,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
             // 
             // bindingNavigatorMoveLastItem
@@ -216,13 +254,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -239,88 +277,76 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Eliminar";
             // 
             // archivoBindingNavigatorSaveItem
             // 
             this.archivoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.archivoBindingNavigatorSaveItem.Enabled = false;
             this.archivoBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("archivoBindingNavigatorSaveItem.Image")));
             this.archivoBindingNavigatorSaveItem.Name = "archivoBindingNavigatorSaveItem";
-            this.archivoBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.archivoBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.archivoBindingNavigatorSaveItem.Text = "Guardar datos";
-            this.archivoBindingNavigatorSaveItem.Click += new System.EventHandler(this.ArchivoBindingNavigatorSaveItem_Click_1);
             // 
             // idLabel
             // 
             idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(66, 31);
+            idLabel.Location = new System.Drawing.Point(20, 80);
             idLabel.Name = "idLabel";
             idLabel.Size = new System.Drawing.Size(18, 13);
-            idLabel.TabIndex = 0;
+            idLabel.TabIndex = 16;
             idLabel.Text = "id:";
             // 
-            // idTextBox
+            // idLabel1
             // 
-            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.archivoBindingSource, "id", true));
-            this.idTextBox.Location = new System.Drawing.Point(90, 28);
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(100, 20);
-            this.idTextBox.TabIndex = 1;
+            this.idLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.archivoBindingSource, "id", true));
+            this.idLabel1.Location = new System.Drawing.Point(44, 80);
+            this.idLabel1.Name = "idLabel1";
+            this.idLabel1.Size = new System.Drawing.Size(100, 23);
+            this.idLabel1.TabIndex = 17;
+            this.idLabel1.Text = "label1";
             // 
-            // nombreLabel
+            // archivoDataGridView
             // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(39, 57);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(45, 13);
-            nombreLabel.TabIndex = 2;
-            nombreLabel.Text = "nombre:";
+            this.archivoDataGridView.AllowUserToAddRows = false;
+            this.archivoDataGridView.AllowUserToDeleteRows = false;
+            this.archivoDataGridView.AutoGenerateColumns = false;
+            this.archivoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.archivoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+            this.archivoDataGridView.DataSource = this.archivoBindingSource;
+            this.archivoDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.archivoDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.archivoDataGridView.Name = "archivoDataGridView";
+            this.archivoDataGridView.ReadOnly = true;
+            this.archivoDataGridView.Size = new System.Drawing.Size(800, 274);
+            this.archivoDataGridView.TabIndex = 0;
             // 
-            // nombreTextBox
+            // dataGridViewTextBoxColumn4
             // 
-            this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.archivoBindingSource, "nombre", true));
-            this.nombreTextBox.Location = new System.Drawing.Point(90, 54);
-            this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nombreTextBox.TabIndex = 3;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn4.HeaderText = "id";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
-            // archivoLabel
+            // dataGridViewTextBoxColumn5
             // 
-            archivoLabel.AutoSize = true;
-            archivoLabel.Location = new System.Drawing.Point(39, 83);
-            archivoLabel.Name = "archivoLabel";
-            archivoLabel.Size = new System.Drawing.Size(45, 13);
-            archivoLabel.TabIndex = 4;
-            archivoLabel.Text = "archivo:";
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "nombre";
+            this.dataGridViewTextBoxColumn5.HeaderText = "nombre";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // archivoTextBox
+            // dataGridViewTextBoxColumn6
             // 
-            this.archivoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.archivoBindingSource, "archivo", true));
-            this.archivoTextBox.Location = new System.Drawing.Point(90, 80);
-            this.archivoTextBox.Name = "archivoTextBox";
-            this.archivoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.archivoTextBox.TabIndex = 5;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(196, 78);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(196, 133);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "realName";
+            this.dataGridViewTextBoxColumn6.HeaderText = "realName";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // Form1
             // 
@@ -337,12 +363,11 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.archivoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.archivoBindingNavigator)).EndInit();
             this.archivoBindingNavigator.ResumeLayout(false);
             this.archivoBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.archivoDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,11 +376,24 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.DataGridView dgv;
-        private textoDataSet textoDataSet;
+
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSeleccionar;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button button3;
+        
+        private System.Windows.Forms.TextBox archivoTextBox;
+        private System.Windows.Forms.TextBox nombreTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.Label idLabel1;
         private System.Windows.Forms.BindingSource archivoBindingSource;
-        private textoDataSetTableAdapters.ArchivoTableAdapter archivoTableAdapter;
-        private textoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView archivoDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.BindingNavigator archivoBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -369,12 +407,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton archivoBindingNavigatorSaveItem;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox archivoTextBox;
-        private System.Windows.Forms.TextBox nombreTextBox;
-        private System.Windows.Forms.TextBox idTextBox;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

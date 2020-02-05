@@ -13,10 +13,10 @@ namespace AuxDisenio.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class textoEntities : DbContext
+    public partial class dbSibaritaEntities : DbContext
     {
-        public textoEntities()
-            : base("name=textoEntities")
+        public dbSibaritaEntities()
+            : base("name=dbSibaritaEntities")
         {
         }
     
@@ -26,5 +26,6 @@ namespace AuxDisenio.Data
         }
     
         public virtual DbSet<Archivo> Archivo { get; set; }
+        public virtual DbSet<Usuarios> Usuarios { get; set; }
     }
 }

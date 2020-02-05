@@ -32,5 +32,15 @@ namespace AuxDisenio.Properties {
                 return ((string)(this["textoConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=dbSibarita;Integrated Security=True")]
+        public string dbSibaritaConnectionString {
+            get {
+                return ((string)(this["dbSibaritaConnectionString"]));
+            }
+        }
     }
 }

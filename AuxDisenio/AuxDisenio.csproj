@@ -54,39 +54,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controladores\ArchivosController.cs" />
+    <Compile Include="Controladores\UsuarioController.cs" />
     <Compile Include="Data\Archivo.cs">
-      <DependentUpon>dbtexto.tt</DependentUpon>
+      <DependentUpon>dbSibarita.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\dbtexto.Context.cs">
+    <Compile Include="Data\dbSibarita.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbtexto.Context.tt</DependentUpon>
+      <DependentUpon>dbSibarita.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\dbtexto.cs">
+    <Compile Include="Data\dbSibarita.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbtexto.tt</DependentUpon>
+      <DependentUpon>dbSibarita.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\dbtexto.Designer.cs">
+    <Compile Include="Data\dbSibarita.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbtexto.edmx</DependentUpon>
+      <DependentUpon>dbSibarita.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Data\Usuarios.cs">
+      <DependentUpon>dbSibarita.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Vistas\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\GestionarArchivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\GestionarArchivos.Designer.cs">
+      <DependentUpon>GestionarArchivos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="textoDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>textoDataSet.xsd</DependentUpon>
+    <Compile Include="Vistas\frmUsuario.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Vistas\frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\GestionarUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\GestionarUsers.Designer.cs">
+      <DependentUpon>GestionarUsers.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Vistas\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\GestionarArchivos.resx">
+      <DependentUpon>GestionarArchivos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -97,14 +118,22 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="Data\dbtexto.edmx">
+    <EmbeddedResource Include="Vistas\frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\GestionarUsers.resx">
+      <DependentUpon>GestionarUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Data\dbSibarita.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>dbtexto.Designer.cs</LastGenOutput>
+      <LastGenOutput>dbSibarita.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Data\dbtexto.edmx.diagram">
-      <DependentUpon>dbtexto.edmx</DependentUpon>
+    <None Include="Data\dbSibarita.edmx.diagram">
+      <DependentUpon>dbSibarita.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\AuxDisenio.Data.Archivo.datasource" />
+    <None Include="Properties\DataSources\AuxDisenio.Data.Usuarios.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -114,38 +143,24 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="textoDataSet.xsc">
-      <DependentUpon>textoDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="textoDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>textoDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="textoDataSet.xss">
-      <DependentUpon>textoDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\dbtexto.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>dbtexto.Context.cs</LastGenOutput>
-      <DependentUpon>dbtexto.edmx</DependentUpon>
-    </Content>
-    <Content Include="Data\dbtexto.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>dbtexto.edmx</DependentUpon>
-      <LastGenOutput>dbtexto.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controladores\" />
+    <Content Include="Data\dbSibarita.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbSibarita.edmx</DependentUpon>
+      <LastGenOutput>dbSibarita.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\dbSibarita.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbSibarita.edmx</DependentUpon>
+      <LastGenOutput>dbSibarita.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
